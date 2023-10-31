@@ -2,20 +2,25 @@
 
 namespace App\Models;
 
-use App\Models\Products;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Categories extends Model
+class Favory extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
 
-    // clé étrangère
-  public function product(): BelongsTo
+    ];
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Products::class);
+        return $this->belongsTo(User::class);
     }
 
+    // clé étrangère product
+  public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
-
