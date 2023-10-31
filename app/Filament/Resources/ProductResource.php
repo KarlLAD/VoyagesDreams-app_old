@@ -28,6 +28,7 @@ class ProductResource extends Resource
                     ->relationship('category', 'name')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->autofocus()
                     ->required()
                     ->maxLength(150),
                 Forms\Components\FileUpload::make('image'),
@@ -46,7 +47,9 @@ class ProductResource extends Resource
             ->columns([
                 //création
 
-                 Tables\Columns\TextColumn::make('category.name')->sortable(),
+                 Tables\Columns\TextColumn::make('category.name'),
+
+
                  Tables\Columns\TextColumn::make('name')->sortable(),
                  Tables\Columns\ImageColumn::make('image')
                  ->height(200)
