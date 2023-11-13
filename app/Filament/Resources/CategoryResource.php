@@ -28,7 +28,8 @@ class CategoryResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(150),
-                Forms\Components\FileUpload::make('icon'),
+                Forms\Components\FileUpload::make('icon')
+                    ->image(),
                 Forms\Components\DatePicker::make('created_at')->displayFormat('d/m/Y')->required(),
                 // Forms\Components\DatePicker::make('updated-at')->displayFormat('d/m/Y')->required(),
 

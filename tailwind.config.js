@@ -14,6 +14,12 @@ export default {
         "./app/Filament/**/*.php",
         "./resources/views/filament/**/*.blade.php",
         "./vendor/filament/**/*.blade.php",
+        // pour dashboard
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+        //
+        "./src/**/*.{html,js}",
     ],
 
     theme: {

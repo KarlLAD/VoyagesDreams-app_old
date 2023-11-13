@@ -18,7 +18,13 @@ class ProductFactory extends Factory
     {
         return [
             //
-            'name' =>$this->faker->sentence(3)
+            // 'name' =>$this->faker->sentence(3),
+            // 'category_id' =>$this->faker->name(),
+            'category_ID' => mt_rand(0, 11),
+            'name' =>  fake()->name(),
+            'description' =>  fake()->text(),
+            'price' => mt_rand(10, 50000),
+
         ];
     }
 }

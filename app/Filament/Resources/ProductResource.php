@@ -19,8 +19,10 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'bxs-plane-alt';
 
+     //Création d'un nouveau produit pour stocker dans la base de donnée
     public static function form(Form $form): Form
     {
+
         return $form
             ->schema([
                 //Saisie de chaque produit avec sa category
@@ -29,30 +31,43 @@ class ProductResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->minLength(2)
                     ->maxLength(150),
-                Forms\Components\FileUpload::make('image'),
+                Forms\Components\FileUpload::make('image')
+                    ->image(),
                 Forms\Components\Textarea::make('description')
                     ->maxLength(65535),
                      Forms\Components\TextInput::make('price')
-                    ->maxLength(50),
+                     ->numeric()
+                     ->minValue(0),
 
 
             ]);
     }
-
+    //Lister les produits de la base de donnée
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //création
+                //Les différentes colonnes de la table de donnée
 
-                 Tables\Columns\TextColumn::make('category.name')->sortable(),
-                 Tables\Columns\TextColumn::make('name')->sortable(),
+                 Tables\Columns\TextColumn::make('category.name')
+                    ->sortable(),
+                 Tables\Columns\TextColumn::make('name')
+                    ->sortable(),
                  Tables\Columns\ImageColumn::make('image')
-                 ->height(200)
-                 ->width(200),
+                    ->height(150)
+                    ->width(150),
                  Tables\Columns\TextColumn::make('description'),
-                 Tables\Columns\TextColumn::make('price')->sortable(),
+                 Tables\Columns\TextColumn::make('price')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
                 //
