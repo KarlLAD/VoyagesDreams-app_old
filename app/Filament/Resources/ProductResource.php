@@ -4,6 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
+
+use App\Models\Category;
+
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -52,12 +55,13 @@ class ProductResource extends Resource
                 //Les différentes colonnes de la table de donnée
 
                  Tables\Columns\TextColumn::make('category.name')
+
                     ->sortable(),
                  Tables\Columns\TextColumn::make('name')
-                    ->sortable(),
+              ->sortable(),
                  Tables\Columns\ImageColumn::make('image')
-                    ->height(150)
-                    ->width(150),
+                    ->height(50)
+                    ->width(50),
                  Tables\Columns\TextColumn::make('description'),
                  Tables\Columns\TextColumn::make('price')
                     ->sortable(),

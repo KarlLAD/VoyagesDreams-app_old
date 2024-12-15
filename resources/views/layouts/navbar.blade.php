@@ -29,10 +29,13 @@
                 <li class="font-semibold text-gray-700">Articles</li> --}}
                     {{-- /resources/views/Images/airplane.jpg --}}
 
-                    <a href="" class="favory">
+                    <a href="" class="count">
                         <li>
 
-                            <img src="/public/build/assets/images/logo.svg" class="h-5 w-5" alt="" />
+
+                            {{-- <img src="/public/build/assets/images/compte.png" class="h-5 w-5" alt="" /> --}}
+                            <img src="{{ Storage::url('/public/build/assets/images/compte.png') }}" class="h-5 w-5"
+                                alt="" />
 
                         </li>
 

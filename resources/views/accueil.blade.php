@@ -33,7 +33,6 @@
         href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css"
         rel="stylesheet">
 
-
     <body class="bg-white rounded-lg py-5">
         <div class="container flex flex-col mx-auto bg-white rounded-lg pt-12 my-5">
             <div class="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
@@ -79,8 +78,9 @@
                             <button
                                 class="w-full px-6 py-5 mb-5 text-sm font-bold leading-none text-white transition duration-300 md:w-96 rounded-2xl hover:bg-purple-blue-600 focus:ring-4 focus:ring-purple-blue-100 bg-cyan-600">Sign
                                 In</button>
-                            <p class="text-sm leading-relaxed text-grey-900">Not registered yet? <a
-                                    href="javascript:void(0)" class="font-bold text-grey-700">Create an Account</a></p>
+                            <p class="text-sm leading-relaxed text-grey-900">Not registered yet? <a href="client"
+                                    class="font-bold text-grey-700">Create an
+                                    Account</a></p>
                         </form>
                     </div>
                 </div>
@@ -102,7 +102,9 @@
     {{--  fin du login --}}
 
 
+
     {{-- fin de la template --}}
+
 
 
     @livewireScripts

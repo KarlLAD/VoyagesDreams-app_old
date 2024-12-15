@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VoyagesDreamsController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,15 +18,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+                        });
 
 Route::get('/accueil',
     function () {
         return view('accueil');
 
-    }
+          } );
+Route::get('/client',
+    function () {
+        return view('client');
 
-);
+          } );
+
+
+          //lister les produits
+Route::get('/index', [VoyagesDreamsController::class, 'index'])->name('index');
+
+// Route::get('/index', function () {
+//     return view('index', ['slot' => Product::all()]);
+// });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

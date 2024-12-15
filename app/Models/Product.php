@@ -28,7 +28,7 @@ class Product extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_ID');
     }
 // admin a l'accès à la table de la db de product
     public function user(): BelongsTo
